@@ -1,4 +1,6 @@
 <h1>Index of Products</h1>
 <% @products.each do |product| %>
-  <p><%= product[:name] %>, Price: <%= product[:price_in_cents] %></p>
+  <p><%= product[:name] %> - Price: $<%= product.formatted_price %> 
+    <%= link_to "Show", "/products/#{product.id}" %> 
+  </p>
 <% end %>

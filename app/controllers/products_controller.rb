@@ -7,7 +7,7 @@ class ProductsController < ApplicationController
   	@product = Product.find(params[:id])
 
     if current_user
-      @reivew = @product.reviews.build
+      @review = @product.reviews.build
     end
   end
 
@@ -43,11 +43,6 @@ class ProductsController < ApplicationController
   	@product = Product.find(params[:id])
   	@product.destroy
   	redirect_to products_path
-  end
-
-  def formatted_price
-  	price_in_dollars = price_in_cents.to_f / 100
-  	return sprintf("%.2f", price_in_dollars)
   end
 
   private

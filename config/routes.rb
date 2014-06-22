@@ -8,6 +8,8 @@ Rainforest::Application.routes.draw do
     resources :reviews, :only => [:show, :create, :destroy]
   end
 
+  root "products#index"
+
 end
 
   # The priority is based upon order of creation: first created -> highest priority.
