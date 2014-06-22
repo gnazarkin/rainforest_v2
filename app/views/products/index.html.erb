@@ -1,4 +1,4 @@
 <h1>Index of Products</h1>
 <% @products.each do |product| %>
-  <p><%= product[:name] %>, Price: <%= product.formatted_price %></p>
+  <p><%= product[:name] %>, Price: <%= product[:price_in_cents] %></p>
 <% end %>
