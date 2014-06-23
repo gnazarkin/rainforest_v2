@@ -13,3 +13,10 @@
  *= require_tree .
  *= require_self
  */
+
+@import "bootstrap";
+
+ul.nav { 
+	display: inline;
+	color: red;
+}

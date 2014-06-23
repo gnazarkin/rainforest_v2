@@ -2,21 +2,25 @@
 <html>
 <head>
   <title>Rainforest</title>
+  <link href="stylesheet.css" rel="stylesheet" type="text/css" />
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 
 <body>
+	<ul class="nav">
+		<li><%= link_to "Products Page", products_path %></li>
+		<li><%= link_to "Post New Product", new_product_path %></li>
+	</ul>
+
+
 	<% if flash[:notice] %>
 		<p id="notice"><%= flash[:notice] %></p>
 	<% end %>
 	<% if flash[:alert] %>
 		<p id="alert"><%= flash[:alert] %></p>
 	<% end %>
-
-<%= link_to "Products Page", products_path %>
-<%= link_to "Create New Product", new_product_path %>
 
 
 <%= yield %>
