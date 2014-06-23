@@ -6,7 +6,7 @@ class ApplicationController < ActionController::Base
   private
   def ensure_logged_in
   	unless current_user
-  		flash[:aslert] = "Please log in"
+  		flash[:alert] = "Please log in"
   		redirect_to new_session_path
   	end
   end
