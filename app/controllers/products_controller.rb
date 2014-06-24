@@ -1,6 +1,6 @@
 class ProductsController < ApplicationController
   before_filter :ensure_logged_in, :only => [:show]
-  
+
   def index
   	@products = Product.all
   end
@@ -22,11 +22,16 @@ class ProductsController < ApplicationController
   end
 
   def create
-  	@product = Product.new(product_params)
+    @product = current_user.products.build(product_params)
+
+    #You can also do this
+  	#@product = Product.new(product_params)
+    #@article.user_id = current_user.id
 
   	if @product.save
-  		redirect_to products_url
+  		redirect_to products_url, notice: "The product was successfully posted!"
   	else
+      flash.now[:alert] = "Error Posting the Product"
   		render :new
   	end
   end 

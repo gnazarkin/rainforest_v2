@@ -20,3 +20,6 @@ ul.nav {
 	display: inline;
 	color: red;
 }
+div.btn-group {
+display: -webkit-inline-box;
+}
