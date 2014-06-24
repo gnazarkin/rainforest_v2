@@ -1,17 +1,13 @@
-<h1>Product</h1>
+<h1><%=@product.name%> - $<%=@product.formatted_price%> </h1>
 
 <% if current_user %>
 
 <div class="btn-group">
-
   <%=button_to "Edit", edit_product_path(@product), :method => :get %>  
   <%=button_to "Delete",product_path(@product.id), :method => :delete, :class => "delete", :confirm => "Are you sure ?"%>  
 </div>
 
 	<h3>Reviews</h3>
-
-	<p>Reviews for <%= @product.name %> -  $<%= @product.formatted_price %></p>
-
 	<% @product.reviews.each do |review| %>
 		<p>
 			<%= review.comment %>

@@ -13,6 +13,7 @@ class ReviewsController < ApplicationController
   	if @review.save
   		render 'products/show', notice: 'Review created successfully'
  	 else
+      flash.now[:alert] = "Your comment failed to be created."
   		render 'products/show'
  	 end
 	end
